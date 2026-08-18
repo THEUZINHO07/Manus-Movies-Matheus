@@ -1,0 +1,147 @@
+:root {
+    --bg-color: #121212;
+    --surface-color: #1e1e1e;
+    --primary-color: #f40612;
+    --primary-hover: #f40612;
+    --text-main: #ffffff;
+    --text-muted: #b3b3b3;
+    --radius: 8px;
+    --transition: 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--surface-color);
+    gap: 15px;
+}
+
+.search-form {
+    display: flex;
+    flex: 1;
+    max-width: 500px;
+    gap: 10px;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: var(--radius);
+  background-color: #2b2b2b;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+.search-form button {
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background var(--transition);
+}
+
+.search-form button:hover {
+  background-color: var(--primary-hover);
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    color:var(--text-muted);
+    border: 2px solid transparent;
+    font-size: 1rem;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all var(--transition);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    color: var(--text-main);
+    border-color: var(--text-main);
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.movie-card {
+  background-color: var(--surface-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform var(--transition);
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/3; 
+  object-fit: cover;
+}
+
+.movie-card h3 {
+  padding: 15px;
+  font-size: 1rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .search-form {
+    width: 100%;
+  }
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+  }

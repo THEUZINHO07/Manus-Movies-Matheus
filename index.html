@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manus Movies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>Manus Movies</h1>
+        </div>
+
+       <form id="searchForm" class="search-form">
+  <input type="text" id="searchInput" placeholder="Buscar filmes...">
+  <button type="submit">Buscar</button>
+</form>
+    </header>
+
+    <nav class="categorias">
+        <button class="filter-btn active" id="btnTrending">Em Alta</button>
+        <button class="filter-btn" id="btnMovies">Filmes</button>
+        <button class="filter-btn" id="btnTvShows">Séries</button>
+
+    </nav>
+
+    <main class="container">
+      <div id="loading" class="hidden">Carregando o catálogo...</div>
+  <div id="error" class="hidden error-text"></div>
+  
+  <section id="results" class="movies-grid"></section>
+    </main>
+
+    <dialog id="movieModal" class="modal">
+        <div class="modal-content"> <button id="closemodal" class="close-btn"
+                aria-label="Fechar Detalhes">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </dialog>
+
+    <footer class="footer">
+        <p>&copy; 2026 Manus Movies. Criado para portifólio.</p>
+        <p class="tmdb-attribution">Dados e imagens fornecidos pelo <a href="https://www.themoviedb.org/"
+                target="_blank">TMDb</a>.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
